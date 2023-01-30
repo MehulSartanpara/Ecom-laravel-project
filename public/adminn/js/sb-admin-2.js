@@ -66,6 +66,7 @@ $(document).on('click', '#product-pagination .pagination .page-link', function(e
     dataType: 'html', 
     success: function (response){
       $('#product-list').html($(response).find('#product-list').html());
+      window.history.pushState(location.href, "", pageLink);
     },
     error: function(){
       console.log("error");
