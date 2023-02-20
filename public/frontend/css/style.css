@@ -1159,3 +1159,25 @@ form input[type="submit"]:focus {
 .qty-container .qty-btn-minus{
   margin-right: -1px;
 }
+
+#product-pagination-collection .pagination{
+  justify-content: center;
+  margin-top: 45px;
+}
+#product-pagination-collection .page-link:hover {
+  z-index: 2;
+  color: #fff;
+  text-decoration: none;
+  background-color: #f7444e;
+  border-color: #f7444e;
+}
+#product-pagination-collection li.page-item.active .page-link {
+  background: #f7444e;
+  z-index: 1;
+  color: #fff;
+  background-color: #f7444e;
+  border-color: #f7444e;
+}
+#product-pagination-collection .page-link{
+  color: #000;
+}

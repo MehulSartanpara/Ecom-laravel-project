@@ -50,10 +50,13 @@
                   </div>
                @endforeach
             </div>
-            <div class="btn-box">
+            <!-- <div class="btn-box">
                <a href="">
                View All products
                </a>
+            </div> -->
+            <div class="" id="product-pagination-collection">
+                {{ $product->links() }}
             </div>
          </div>
       </section>
