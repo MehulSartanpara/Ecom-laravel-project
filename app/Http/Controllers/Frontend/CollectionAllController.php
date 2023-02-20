@@ -9,7 +9,7 @@ use App\Models\product;
 class CollectionAllController extends Controller
 {
     public function index(){
-        $product = Product::orderBy('id', 'desc')->paginate(6);
+        $product = Product::orderBy('id', 'desc')->paginate(9);
         
         return view('frontend.collections-all',compact('product')); 
     }
