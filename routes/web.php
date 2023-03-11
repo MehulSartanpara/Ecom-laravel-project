@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\SingleProductController;
 use App\Http\Controllers\Frontend\CollectionAllController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CollectionController;
 
 
 // For Login Only
@@ -58,18 +59,27 @@ Route::group(['prefix' => '/admin', 'middleware' => 'isLoggedIn' ], function () 
 
 
 // For Frontend Only
+
+// Home Page
 Route::get('/', [HomeController::class, 'index']);
+
+// Main Product
 Route::get('/products/{slug}', [SingleProductController::class, 'index']);
+
+// All Collections
 Route::get('/collections/all', [CollectionAllController::class, 'index']);
 
+// User Login
 Route::get('/register', [UserController::class, 'index']);
 Route::post('/register', [UserController::class, 'register']);
 Route::get('/login', [UserController::class, 'login']);
 Route::post('/login', [UserController::class, 'logInUser']);
 Route::get('/logout', [UserController::class, 'logout']);
 
+// Cart Page
 Route::get('/cart', [CartController::class, 'index']);
 
-
+// Collection Particular
+Route::get('/collections/{slug}', [CollectionController::class, 'collections']);
 
 

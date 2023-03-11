@@ -14,5 +14,6 @@ class category extends Model
         'category_name',
         'no_of_product',
         'username',
+        'slug',
     ];
 }

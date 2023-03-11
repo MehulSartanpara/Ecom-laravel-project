@@ -27,7 +27,7 @@
                         <input type="hidden" name="username" class="form-control" value="{{ $category->username }}">
                     </div>
                     <div class="text-right">
-                      <button type="submit" class="btn btn-primary">Update Admin</button>
+                      <button type="submit" class="btn btn-primary">Update Category</button>
                     </div>
                   </form>
                 </div>

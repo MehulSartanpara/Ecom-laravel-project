@@ -173,7 +173,7 @@ class ProductController extends Controller
         $noOfProduct -= 1;
         $admin->update(['no_of_product' => $noOfProduct]);
         // CATEGORY COUNT DECREMENT
-        $CategoryName = $product->category;;
+        $CategoryName = $product->category;
         $Category = Category::where('category_name', $CategoryName)->firstOrFail();
         $noOfCategory = $Category->no_of_product;
         $noOfCategory -= 1;

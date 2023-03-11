@@ -52,10 +52,9 @@
                               <span class="caret"></span>
                            </a>
                            <ul class="dropdown-menu">
-                              <li><a href="about.html">Mens</a></li>
-                              <li><a href="about.html">Womens</a></li>
-                              <li><a href="about.html">Children</a></li>
-                              <li><a href="about.html">Adult</a></li>
+                              @foreach ($categories as $category)
+                                 <li><a href="{{ url('/collections/'.$category->slug) }}">{{ $category->category_name }}</a></li>
+                              @endforeach
                            </ul>
                         </li>
                         <li class="nav-item @if(url()->current() == url('/collections/all')) active @endif">
@@ -67,8 +66,19 @@
                         <li class="nav-item">
                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
+                        
+                        @if(!session()->has('userid'))
+                           @php
+                              $CartUrl = url('/login');
+                           @endphp
+                        @else
+                           @php
+                              $CartUrl = url('/cart');
+                           @endphp
+                        @endif
+                        
                         <li class="nav-item">
-                           <a class="nav-link" href="{{ url('/cart') }}" style="padding: 5px 10px;">
+                           <a class="nav-link" href="{{ $CartUrl }}" style="padding: 5px 10px;">
                               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                                  <g>
                                     <g>

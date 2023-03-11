@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\category;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -24,6 +25,7 @@ class CategoryController extends Controller
         $category->category_name = $request->input('category_name');
         $category->no_of_product = '0';
         $category->username = $request->input('admin');
+        $category->slug = Str::slug($request->input('category_name'));
         $category->save();
         return redirect('admin/categorys')->with('success','Category Added Successfully');
     }
@@ -41,6 +43,7 @@ class CategoryController extends Controller
         $category->category_name = $request->input('category_name');
         $category->no_of_product = $request->input('no_of_product');
         $category->username = $request->input('username');
+        $category->slug = Str::slug($request->input('category_name'));
         $category->update();
         return redirect('admin/categorys')->with('update','Category Updated Successfully');
     }
